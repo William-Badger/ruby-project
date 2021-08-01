@@ -4,9 +4,6 @@ const MainContainer = () => {
     return (
         <div>
     <div class="ui secondary pointing menu">
-    <a class="active item">
-    Login
-  </a>
   <a class="item">
     Leaderboards
   </a>
