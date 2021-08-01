@@ -1,0 +1,155 @@
+{
+    "easy riddles":[
+        {
+            "id": 1,
+            "question": "WHAT CAN TRAVEL AROUND THE WORLD WHILE STAYING IN A CORNER?" ,
+            "answer": "A STAMP"
+        },
+        {
+            "id": 2,
+            "question": "WHAT HAS MANY KEYS BUT CANNOT OPEN A SINGLE LOCK?" ,
+            "answer": "A PIANO"
+        },
+        {
+            "id": 3,
+            "question": "WHAT RUNS AROUND A BACKYARD BUT NEVER MOVES?" ,
+            "answer": "A FENCE"
+        },
+        {
+            "id": 4,
+            "question": "I AM AN ODD NUMBER. TAKE AWAY A LETTER AND I BECOME EVEN. WHAT NUMBER AM I?" ,
+            "answer": "SEVEN"
+        },
+        {
+            "id": 5,
+            "question": "WHAT GOES THROUGH CITIES AND FIELDS, BUT NEVER MOVES?" ,
+            "answer": "A ROAD"
+        },
+        {
+            "id": 6,
+            "question": "DURING WHICH MONTH DO PEOPLE SLEEP THE LEAST?" ,
+            "answer": "FEBRUARY"
+        },
+        {
+            "id": 7,
+            "question": "I AM TALL WHEN I'M YOUNG AND SHORT WHEN I'M OLD. WHAT AM I?" ,
+            "answer": "A CANDLE"
+        },
+        {
+            "id": 8,
+            "question": "WHAT HAS HANDS BUT CAN NOT CLAP?",
+            "answer": "A CLOCK"
+        },
+        {
+            "id": 9,
+            "question": "WHICH WORD IN THE DICTIONARY IS SPELLED INCORRECTLY?" ,
+            "answer": "INCORRECTLY"
+        }
+    ],
+
+    "medium riddles":[
+        {
+            "id": 1, 
+            "question": "WHAT HAS A BOTTOM AT THE TOP?",
+            "answer": "LEGS"
+
+        },
+        {
+            "id": 2, 
+            "question": "THERE WAS A GREEN HOUSE. INSIDE THE GREEN HOUSE THERE WAS A WHITE HOUSE. INSIDE THE WHITE HOUSE THERE WAS A RED HOUSE. INSIDE THE RED HOUSE THERE WERE LOTS OF BABIES. WHAT IS IT?",
+            "answer": "A WATERMELON"
+
+        },
+        {
+            "id": 3, 
+            "question": "IF YOU HAVE ME, YOU WANT TO SHARE ME. IF YOU SHARE ME YOU HAVEN'T GOT ME. WHAT AM I?",
+            "answer": "A SECRET"
+
+        },
+        {
+            "id": 4, 
+            "question": "TEAR ONE OFF AND SCRATCH MY HEAD WHAT WAS RED IS BLACK INSTEAD.",
+            "answer": "A MATCHSTICK"
+
+        },
+        {
+            "id": 5, 
+            "question": "IN A RIDDLE WHOSE ANSWER IS CHESS, WHAT IS THE ONLY PROHIBITED WORD?",
+            "answer": "CHESS"
+
+        },
+        {
+            "id": 6, 
+            "question": "WHAT BELONGS TO YOU, BUT EVERYBODY USES IT MORE THAN YOU DO?",
+            "answer": "YOUR NAME"
+
+        },
+        {
+            "id": 7, 
+            "question": "WHAT CAN ONLY BE USED AFTER IT IS BROKEN?",
+            "answer": "AN EGG"
+
+        },
+        {
+            "id": 8, 
+            "question": "THIS THING ALL THINGS DEVOURS; BIRDS, BEASTS, TREES, FLOWERS; GNAWS IRON, BITES STEEL; GRINDS HARD STONES TO MEAL; SLAYS KING, RUINS TOWN, AND BEATS MOUNTAIN DOWN.",
+            "answer": "TIME"
+
+        },
+        {
+            "id": 9, 
+            "question": "AS I WAS GOING TO ST.IVES, I MET A MAN WITH SEVEN WIVES, EACH WIFE HAS SEVEN SACKS, EACH SACK HAD SEVEN CATS, EACH CAT HAD SEVEN KITS: KITS, CATS, SACKS, AND WIVES, HOW MANY WERE THERE GOING TO ST. IVES?",
+            "answer": "One"
+
+        },
+        {
+            "id": 10, 
+            "question": "THERE IS A HOUSE. ONE ENTERS IT BLIND AND COMES OUT SEEING. WHAT IS IT?",
+            "answer": "A SCHOOL"
+
+        }
+    ],
+
+    "hard riddles":[
+        {
+            "id": 1,
+            "question": "WHAT IS HE THAT BUILDS STRONGER THAN EITHER THE MASON, THE SHIPWRIGHT, OR THE CARPENTER?",
+            "answer": "A GRAVEDIGGER"
+        },
+        {
+            "id": 2,
+            "question": "OUT OF THE EATER, SOMETHING TO EAT; OUT OF THE STRONG, SOMETHING SWEET.",
+            "answer": "BEES MAKING A HONEYCOMB INSIDE THE CARCASS OF LION"
+        },
+        {
+            "id": 3,
+            "question": "MY FIRST DISPLAYS THE WEALTH AND POMP OF KINGS, LORDS OF THE EARTH! THEIR LUXURY AND EASE. ANOTHER VIEW OF MAN, MY SECOND BRINGS, BEHOLD HIM THERE, THE MONARCH OF THE SEAS!",
+            "answer": "COURTSHIP"
+        },
+        {
+            "id": 4,
+            "question": "WHY IS A RAVEN LIKE A WRITING DESK",
+            "answer": "I HAVEN'T THE SLIGHTEST IDEA"
+        },
+        {
+            "id": 5,
+            "question": "ALIVE WITHOUT BREATH, AS COLD AS DEATH; NEVER THIRSTY, EVER DRINKING, ALL IN MAIL NEVER CLINKING.",
+            "answer": "A FISH"
+        },
+        {
+            "id": 6,
+            "question": "WHAT IS THE AIR-SPEED VELOCITY OF AN UNLADEN SWALLOW?",
+            "answer": "AFRICAN OR EUROPEAN"
+        },
+        {
+            "id": 7,
+            "question": "MANKIND IT MARS, SPEECH IT HINDERS, YET SPEECH IT WILL INSPIRE.",
+            "answer": "ALCOHOL"
+        },
+        {
+            "id": 8,
+            "question": "WHAT WE CAUGHT WE THREW AWAY; WHAT WE DIDN'T CATCH, WE KEPT. WHAT DID WE KEEP?",
+            "answer": "LICE"
+        }
+    ]
+}
