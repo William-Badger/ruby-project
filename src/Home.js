@@ -18,7 +18,8 @@ const Home = () => {
       <div class="field">
         <input placeholder="Username" type="text"></input>
       </div>
-      <div class="ui submit button">Submit</div>
+      <div 
+      class="ui submit button">Submit</div>
     </div>
     
   </div>

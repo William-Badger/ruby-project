@@ -14,7 +14,7 @@ function App() {
       <Route exact path="/">
       <Home />
       </Route>
-      <Route exact path="/home">
+      <Route exact path="/game">
       <MainContainer />
       </Route>
       </BrowserRouter>
