@@ -15,6 +15,10 @@ const MainContainer = () => {
         setGame(true)
     }
 
+    const logout = () => {
+      window.location.href="/"
+     }
+
     return (
         <div>
     <div class="ui secondary pointing menu">
@@ -29,7 +33,7 @@ const MainContainer = () => {
     Game
   </a>
   <div class="right menu">
-    <a class="ui item">
+    <a class="ui item" onClick={logout}>
       Logout
     </a>
   </div>
