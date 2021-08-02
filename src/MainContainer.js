@@ -1,13 +1,31 @@
 import React from 'react';
+import Leaderboard from './Leaderboard';
+import Game from './Game';
+import { useState } from 'react';
 
 const MainContainer = () => {
+
+    const [isGame, setGame] = useState(false);
+
+    function toLeaderboard() {
+        setGame(false)
+    }
+
+    function toGame() {
+        setGame(true)
+    }
+
     return (
         <div>
     <div class="ui secondary pointing menu">
-  <a class="item">
+  <a 
+   onClick = {toLeaderboard}
+  class="item">
     Leaderboards
   </a>
-  <a class="item">
+  <a 
+   onClick = {toGame}
+  class="item">
     Game
   </a>
   <div class="right menu">
@@ -15,6 +33,9 @@ const MainContainer = () => {
       Logout
     </a>
   </div>
+</div>
+<div className="ui segment">
+    {!isGame ? <Leaderboard /> : <Game />}
 </div>
         </div>
     );
