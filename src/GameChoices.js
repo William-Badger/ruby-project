@@ -1,5 +1,7 @@
 import React from 'react';
 import Leaderboard from "./Leaderboard";
+import Stopwatch from './Stopwatch';
+
 
 const GameChoices = () => {
     return (
@@ -15,6 +17,7 @@ const GameChoices = () => {
     Impossible
   </a>
 </div>
+    <Stopwatch />
     <Leaderboard />
 </div>
     );

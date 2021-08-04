@@ -1,6 +1,5 @@
 import React from 'react';
 import GameChoices from "./GameChoices";
-import { useState } from 'react';
 
 const MainContainer = () => {
 
