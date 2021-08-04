@@ -3,3 +3,23 @@
     margin:auto;
     margin-top:50px;
 }
+
+#choices-bar {
+    margin-top: 0px;
+}
+
+#menu-bar {
+    margin: 0;
+}
+
+#game_background {
+    text-align: center;
+}
+
+#game_background img {
+    max-width: 800px;
+}
+
+.game {
+    background-color: grey;
+}
