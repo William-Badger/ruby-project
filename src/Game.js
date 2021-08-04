@@ -9,7 +9,6 @@ const Game = ({difficulty, currentUser}) => {
         return (
             <div>
                 <Riddle difficulty={difficulty}/>
-                <h1>{currentUser}</h1>
         <div id="easy-mode" className="game_background">
             <img id="easy" src="https://media.sketchfab.com/models/c7bda986ea5f4b8399289c076465f64f/thumbnails/691843d98d1744a696da94351cf7e887/1024x576.jpeg"></img>
         </div>

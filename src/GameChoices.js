@@ -1,14 +1,14 @@
 import React from 'react';
-import Leaderboard from "./Leaderboard";
 import { useState } from 'react';
 import Game from './Game';
 
-const GameChoices = ({setAtHome, currentUser}) => {
+const GameChoices = ({setAtHome, currentUser, atHome}) => {
 
   const [difficulty, setDifficulty] = useState('');
   const [riddles, setRiddles] = useState([]);
 
   function handleClick(difficulty) {
+    setDifficulty(difficulty)
         fetch(`http://localhost:9292/games/${difficulty}`)
           .then((r) => r.json())
           .then((data) => console.log(data));
@@ -20,8 +20,10 @@ const GameChoices = ({setAtHome, currentUser}) => {
     setAtHome(false)
   }
 
+  
     return (
         <div className="game">
+          { atHome ?
             <div id="choices-bar" class="ui black three item inverted menu">
   <a class="item"
   onClick={() => handleClick('easy')}
@@ -39,11 +41,14 @@ const GameChoices = ({setAtHome, currentUser}) => {
     Hard
   </a>
 </div>
+:
+<>
+</>
+}
       <Game 
       difficulty={difficulty}
       currentUser={currentUser}
       />
-    
 </div>
     );
   

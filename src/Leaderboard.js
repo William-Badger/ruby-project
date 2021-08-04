@@ -10,8 +10,8 @@ const Leaderboard = () => {
   }, []);
   
     return (
-        <div id="leaderboard">
-        <table class="ui selectable inverted table">
+        
+        <table id="leaderboard" class="ui selectable inverted table">
         <thead>
           <tr>
             <th>Username</th>
@@ -27,7 +27,6 @@ const Leaderboard = () => {
         </tbody>
         ))}
       </table>
-      </div>
     );
 }
 

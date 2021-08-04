@@ -32,6 +32,7 @@ const MainContainer = ({currentUser}) => {
 <div id="game-area">
 <GameChoices
 setAtHome={setAtHome}
+atHome ={atHome}
 currentUser={currentUser} 
 />
 </div>
