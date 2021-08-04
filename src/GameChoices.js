@@ -3,9 +3,16 @@ import Leaderboard from "./Leaderboard";
 import { useState } from 'react';
 import Game from './Game';
 
-const GameChoices = ({setAtHome}) => {
+const GameChoices = ({setAtHome, currentUser}) => {
 
   const [difficulty, setDifficulty] = useState('');
+  //  const [riddles, setRiddles] = useState([]);
+
+  //   useEffect(() => {
+  //       fetch(`http://localhost:9292/games/${difficulty}`)
+  //         .then((r) => r.json())
+  //         .then((riddles) => setRiddles(riddles));
+  //     }, []);
 
   if(difficulty === '') {
     setAtHome(true)
@@ -34,6 +41,7 @@ const GameChoices = ({setAtHome}) => {
 </div>
       <Game 
       difficulty={difficulty}
+      currentUser={currentUser}
       />
     
 </div>

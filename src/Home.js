@@ -1,16 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
-const Home = () => {
+const Home = ({users, setUsers, currentUser, setCurrentUser}) => {
   const [isActive, setActive] = useState("True");
-  const [users, setUsers] = useState([]);
   const [newUsername, setNewUsername] = useState("")
-  const [currentUser, setCurrentUser] = useState(newUsername)
-
-  useEffect(() => {
-    fetch("http://localhost:9292/users")
-      .then((r) => r.json())
-      .then((users) => setUsers(users));
-  }, []);
 
   function addUser(newUser) {
     setUsers([...users, newUser]);
@@ -36,6 +28,7 @@ const Home = () => {
       .then((r) => r.json())
       .then((newUser) => {
         addUser(newUser);
+        setCurrentUser(newUser);
       });
    }
 

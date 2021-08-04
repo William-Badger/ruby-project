@@ -3,7 +3,7 @@ import GameChoices from "./GameChoices";
 import { useState } from 'react';
 
 
-const MainContainer = () => {
+const MainContainer = ({currentUser}) => {
 
   const [atHome, setAtHome] = useState(false);
 
@@ -31,7 +31,8 @@ const MainContainer = () => {
 </div>
 <div id="game-area">
 <GameChoices
-setAtHome={setAtHome} 
+setAtHome={setAtHome}
+currentUser={currentUser} 
 />
 </div>
 </div>
