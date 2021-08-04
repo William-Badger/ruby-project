@@ -6,13 +6,13 @@ import Game from './Game';
 const GameChoices = ({setAtHome, currentUser}) => {
 
   const [difficulty, setDifficulty] = useState('');
-  //  const [riddles, setRiddles] = useState([]);
+  const [riddles, setRiddles] = useState([]);
 
-  //   useEffect(() => {
-  //       fetch(`http://localhost:9292/games/${difficulty}`)
-  //         .then((r) => r.json())
-  //         .then((riddles) => setRiddles(riddles));
-  //     }, []);
+  if (difficulty !== '') {
+        fetch(`http://localhost:9292/games/${difficulty}`)
+          .then((r) => r.json())
+          .then((data) => console.log(data));
+  }
 
   if(difficulty === '') {
     setAtHome(true)
