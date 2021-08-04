@@ -1,8 +1,11 @@
 import React from 'react';
 import GameChoices from "./GameChoices";
+import { useState } from 'react';
 
 
 const MainContainer = () => {
+
+  const [atHome, setAtHome] = useState(false);
 
     const logout = () => {
       window.location.href="/"
@@ -15,8 +18,10 @@ const MainContainer = () => {
     return (
         <div id="main-container">
     <div id="menu-bar" class="ui secondary pointing menu">
-  <a class="item" onClick={home}>
-    Home
+  <a class="item" 
+  onClick={home}
+  >
+    {atHome ? "Home" : "Quit"}
   </a>
   <div class="right menu">
     <a class="ui item" onClick={logout}>
@@ -24,8 +29,11 @@ const MainContainer = () => {
     </a>
   </div>
 </div>
-<GameChoices 
+<div id="game-area">
+<GameChoices
+setAtHome={setAtHome} 
 />
+</div>
 </div>
     );
 }

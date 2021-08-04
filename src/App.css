@@ -2,6 +2,7 @@
     width: 300px;
     margin:auto;
     margin-top:50px;
+    position: static;
 }
 
 #choices-bar {
@@ -12,14 +13,33 @@
     margin: 0;
 }
 
-#game_background {
+.game_background {
     text-align: center;
 }
 
-#game_background img {
-    max-width: 800px;
+.game_background img {
+    max-width: fill;
+    position: relative;
 }
 
-.game {
-    background-color: grey;
+#easy-mode {
+    margin: 0;
+    padding-top:40px;
+    padding-bottom:40px;
+    background-color: rgb(18,20,21);
+    width:fill;
+}
+#medium-mode {
+    margin: 0;
+    padding-top:40px;
+    padding-bottom:40px;
+    background-color: rgb(35,29,32);
+    width:fill;
+}
+#hard-mode {
+    margin: 0;
+    padding-top:40px;
+    padding-bottom:40px;
+    background-color: rgb(8,8,8);
+    width:fill;
 }

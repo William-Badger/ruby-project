@@ -3,9 +3,15 @@ import Leaderboard from "./Leaderboard";
 import { useState } from 'react';
 import Game from './Game';
 
-const GameChoices = () => {
+const GameChoices = ({setAtHome}) => {
 
   const [difficulty, setDifficulty] = useState('');
+
+  if(difficulty === '') {
+    setAtHome(true)
+  } else {
+    setAtHome(false)
+  }
 
     return (
         <div className="game">
@@ -29,7 +35,7 @@ const GameChoices = () => {
       <Game 
       difficulty={difficulty}
       />
-    <Leaderboard />
+    
 </div>
     );
   
