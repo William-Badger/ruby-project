@@ -5,10 +5,9 @@ import { BrowserRouter, Route } from "react-router-dom";
 import React, {useEffect, useState} from 'react';
 
 
-
 function App() {
   const [users, setUsers] = useState([]);
-  const [currentUser, setCurrentUser] = useState('')
+  const [currentUser, setCurrentUser] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9292/users")
@@ -16,7 +15,20 @@ function App() {
       .then((users) => setUsers(users));
   }, []);
 
+  function setTheUser(newU) {
+    setCurrentUser(newU)
+  }
 
+  function handleUpdateUser(updatedUserObj) {
+    const updatedUsers = users.map((user) => {
+      if (user.id === updatedUserObj.id) {
+        return updatedUserObj;
+      } else {
+        return user;
+      }
+    });
+    setUsers(updatedUsers);
+  }
 
   return (
     <div className="App">
@@ -24,10 +36,10 @@ function App() {
       </header>
       <BrowserRouter>
       <Route exact path="/">
-      <Home users={users} setUsers={setUsers} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+      <Home users={users} setUsers={setUsers} currentUser={currentUser} setCurrentUser={setCurrentUser} setTheUser={setTheUser}/>
       </Route>
       <Route exact path="/game">
-      <MainContainer currentUser={currentUser}/>
+      <MainContainer currentUser={currentUser} updateUser={handleUpdateUser}/>
       </Route>
       </BrowserRouter>
     </div>

@@ -2,16 +2,24 @@ import React from 'react';
 import { useState } from 'react';
 import Game from './Game';
 
-const GameChoices = ({setAtHome, currentUser, atHome}) => {
+const GameChoices = ({setAtHome, currentUser, atHome, updateUser}) => {
 
   const [difficulty, setDifficulty] = useState('');
   const [riddles, setRiddles] = useState([]);
+  const [first, setFirst] = useState([]);
+  const [second, setSecond] = useState([]);
+  const [third, setThird] = useState([])
 
   function handleClick(difficulty) {
     setDifficulty(difficulty)
         fetch(`http://localhost:9292/games/${difficulty}`)
           .then((r) => r.json())
-          .then((data) => console.log(data));
+          .then((data) => {
+            setRiddles(data);
+            setFirst(data[0])
+            setSecond(data[1])
+            setThird(data[2])
+          });       
   }
 
   if(difficulty === '') {
@@ -48,6 +56,10 @@ const GameChoices = ({setAtHome, currentUser, atHome}) => {
       <Game 
       difficulty={difficulty}
       currentUser={currentUser}
+      first={first}
+      second={second}
+      third={third}
+      updateUser={updateUser}
       />
 </div>
     );

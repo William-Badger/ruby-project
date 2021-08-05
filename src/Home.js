@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Home = ({users, setUsers, currentUser, setCurrentUser}) => {
+const Home = ({users, setUsers, currentUser, setCurrentUser, setTheUser}) => {
   const [isActive, setActive] = useState("True");
   const [newUsername, setNewUsername] = useState("")
 
@@ -22,13 +22,14 @@ const Home = ({users, setUsers, currentUser, setCurrentUser}) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: newUsername
+        username: newUsername,
+        highscore: 0
       }),
     })
       .then((r) => r.json())
       .then((newUser) => {
         addUser(newUser);
-        setCurrentUser(newUser);
+        setTheUser(newUser);
       });
    }
 
