@@ -31,7 +31,7 @@ const GameChoices = ({setAtHome, currentUser, atHome, updateUser}) => {
   
     return (
         <div className="game">
-          { atHome ?
+          { atHome && currentUser.highscore === null ?
             <div id="choices-bar" class="ui black three item inverted menu">
   <a class="item"
   onClick={() => handleClick('easy')}

@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
+import { useHistory } from "react-router-dom";
+
 
 const Home = ({users, setUsers, currentUser, setCurrentUser, setTheUser}) => {
   const [isActive, setActive] = useState("True");
   const [newUsername, setNewUsername] = useState("")
+  let history = useHistory();
+
 
   function addUser(newUser) {
     setUsers([...users, newUser]);
@@ -14,7 +18,7 @@ const Home = ({users, setUsers, currentUser, setCurrentUser, setTheUser}) => {
 
    const startGame = (e) => {
      e.preventDefault();
-    window.location.href="/Game"
+     history.push("/Game");
 
     fetch("http://localhost:9292/users", {
       method: "POST",
@@ -34,24 +38,27 @@ const Home = ({users, setUsers, currentUser, setCurrentUser, setTheUser}) => {
    }
 
     return (
-        <div>
-        <div class="ui secondary pointing menu">
+        <div id="login">
+          <header>RIDDLE ME THIS</header>
+        {/* <div class="ui secondary pointing menu">
   <a class={isActive ? "active item" : "item"} onClick={ToggleClass}>
     Login
   </a>
   <a class={!isActive ? "active item" : "item"} onClick={ToggleClass}>
     Sign Up
   </a>
-</div>
+</div> */}
 
 <form onSubmit={startGame}>
 <div class="ui inverted segment">
   <div class="ui inverted form">
     <div class="one field">
       <div class="field">
-        <input type="text" name="newUsername" value={newUsername} onChange={(e) => setNewUsername(e.target.value)} placeholder={isActive ? "Username" : "Create Username"} required/>
+        <input type="text" style={{position: "center"}} name="newUsername" value={newUsername} onChange={(e) => setNewUsername(e.target.value)} placeholder="Player Name"
+        // placeholder={isActive ? "Username" : "Create Username"} 
+        required/>
       </div>
-      <button type="submit" class="ui submit button">Let's Play!</button>
+      <button id="start" type="submit" class="ui submit button">Let's Play!</button>
     </div>
     
   </div>

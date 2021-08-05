@@ -14,7 +14,7 @@ const Leaderboard = () => {
         <table id="leaderboard" class="ui selectable inverted table">
         <thead>
           <tr>
-            <th>Username</th>
+            <th>Player</th>
             <th class="right aligned">Score</th>
           </tr>
         </thead>

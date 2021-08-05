@@ -4,6 +4,24 @@
     margin-top:75px;
 }
 
+#login {
+    width: 500px;
+    margin:auto;
+    margin-top:75px;
+}
+
+#answer {
+    width: 500px;
+    margin:auto;
+    margin-top:10px;
+}
+
+#start {
+    width: 500px;
+    margin:auto;
+    margin-top:10px;
+}
+
 #choices-bar {
     margin-top: 0px;
 }
@@ -21,11 +39,15 @@
     position: relative;
 }
 
+img {
+    opacity: 50%;
+}
+
 #easy-mode {
     margin: 0px;
     padding-top:40px;
     padding-bottom:40px;
-    background-color: rgb(18,20,21);
+    background-color: #1D2021;
     width:100%;
 }
 #medium-mode {
@@ -39,7 +61,7 @@
     margin: 0px;
     padding-top:40px;
     padding-bottom:40px;
-    background-color: rgb(8,8,8);
+    background-color: #101010;
     width:100%;
 }
 
@@ -65,7 +87,8 @@ h2 span {
    color: white; 
    /* font: bold 24px/45px Helvetica, Sans-Serif;  */
    font-family: 'Audiowide';
-   letter-spacing: -1px;  
+   letter-spacing: -1px;
+   line-height: 215%;
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.4);
    padding: 10px; 
@@ -78,6 +101,7 @@ header {
      /* font: bold 24px/45px Helvetica, Sans-Serif;  */
      font-family: 'Audiowide';
      font-size: 50px;
+     font-weight: bold;
      letter-spacing: -1px;  
      /* background: rgb(0, 0, 0); /* fallback color */
      /* background: rgba(0, 0, 0, 0.4); */ 
@@ -85,7 +109,7 @@ header {
      text-align: center;
      margin-top: 15px;
      margin-bottom: 15px;
-     text-shadow: -3px -3px #a77821;
+     text-shadow: -3px -3px #706d68;
   }
 
  .ui-inverted-segment {

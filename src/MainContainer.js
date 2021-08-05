@@ -25,7 +25,7 @@ const MainContainer = ({currentUser, updateUser}) => {
   </a>
   <div class="right menu">
     <a class="ui item" onClick={logout}>
-      Logout
+      New Game
     </a>
   </div>
 </div>
