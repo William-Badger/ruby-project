@@ -197,7 +197,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'done' ?
                 <div id="easy-mode" class="image">
                 <img id="easy" src="https://media.sketchfab.com/models/c7bda986ea5f4b8399289c076465f64f/thumbnails/691843d98d1744a696da94351cf7e887/1024x576.jpeg" alt="img"></img>
-                <h2><span>{points === 1 ? `Your Score: ${points} Point` : `Your Score: ${points} Points`}</span></h2>
+                <h2><span>{points === 0 ? "How Did You Get 0 Points" : points === 1 ? `Your Score: ${points} Point` : `Your Score: ${points} Points`}</span></h2>
                 <div id="answer">
                 <form onSubmit={exitGame} >
             <button type="submit" class="ui submit button">Exit Game</button>
@@ -333,7 +333,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'done' ?
                 <div id="medium-mode" class="image">
                 <img id="medium" src="https://i.pinimg.com/originals/b6/d1/f0/b6d1f08cc854aaa7ec171fcc744da7eb.png" alt="img"></img>
-                <h2><span>{points === 1 ? `Your Score: ${points} Point` : `Your Score: ${points} Points`}</span></h2>
+                <h2><span>{points === 0 ? `You got 0 Points You Casual` : `Your Score: ${points} Points`}</span></h2>
                 <div id="answer">
                 <form onSubmit={exitGame} >
             <button type="submit" class="ui submit button">Exit Game</button>
@@ -466,7 +466,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'done' ?
                 <div id="hard-mode" class="image">
                 <img id="hard" src="https://assetstorev1-prd-cdn.unity3d.com/key-image/936640d6-a60c-41e0-a4a4-5838b470b784.png" alt="img"></img>
-                <h2><span>{points === 1 ? `Your Score: ${points} Point` : `Your Score: ${points} Points`}</span></h2>
+                <h2><span>{points === 0 ? `You got 0 Points, But That's More Than Me` : `Your Score: ${points} Points`}</span></h2>
                 <div id="answer">
                 <form onSubmit={exitGame} >
             <button type="submit" class="ui submit button">Exit Game</button>
