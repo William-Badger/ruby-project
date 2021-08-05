@@ -29,7 +29,7 @@ const Home = ({users, setUsers, currentUser, setCurrentUser, setTheUser}) => {
       .then((r) => r.json())
       .then((newUser) => {
         addUser(newUser);
-        setTheUser(newUser);
+        setCurrentUser(newUser);
       });
    }
 

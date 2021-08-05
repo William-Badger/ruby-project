@@ -5,7 +5,7 @@ import Game from './Game';
 const GameChoices = ({setAtHome, currentUser, atHome, updateUser}) => {
 
   const [difficulty, setDifficulty] = useState('');
-  const [riddles, setRiddles] = useState([]);
+  // const [riddles, setRiddles] = useState([]);
   const [first, setFirst] = useState([]);
   const [second, setSecond] = useState([]);
   const [third, setThird] = useState([])
@@ -15,7 +15,7 @@ const GameChoices = ({setAtHome, currentUser, atHome, updateUser}) => {
         fetch(`http://localhost:9292/games/${difficulty}`)
           .then((r) => r.json())
           .then((data) => {
-            setRiddles(data);
+            // setRiddles(data);
             setFirst(data[0])
             setSecond(data[1])
             setThird(data[2])

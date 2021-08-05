@@ -17,7 +17,7 @@
 }
 
 .game_background img {
-    max-width: fill;
+    max-width: 100%;
     position: relative;
 }
 
@@ -26,27 +26,27 @@
     padding-top:40px;
     padding-bottom:40px;
     background-color: rgb(18,20,21);
-    width:fill;
+    width:100%;
 }
 #medium-mode {
     margin: 0px;
     padding-top:40px;
     padding-bottom:40px;
     background-color: rgb(35,29,32);
-    width:fill;
+    width:100%;
 }
 #hard-mode {
     margin: 0px;
     padding-top:40px;
     padding-bottom:40px;
     background-color: rgb(8,8,8);
-    width:fill;
+    width:100%;
 }
 
 .image { 
     position: relative; 
     width: 100%; /* for IE 6 */
-    max-width: fill;
+    max-width: 100%;
     text-align: center;
     
  }
@@ -58,11 +58,36 @@
   width: 100%; 
 }
 
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Monoton|Quantico:700');
+
+
 h2 span { 
    color: white; 
-   font: bold 24px/45px Helvetica, Sans-Serif; 
+   /* font: bold 24px/45px Helvetica, Sans-Serif;  */
+   font-family: 'Audiowide';
    letter-spacing: -1px;  
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.4);
    padding: 10px; 
 }
+
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Monoton|Quantico:700');
+
+header { 
+    /* color: white;  */
+     /* font: bold 24px/45px Helvetica, Sans-Serif;  */
+     font-family: 'Audiowide';
+     font-size: 50px;
+     letter-spacing: -1px;  
+     /* background: rgb(0, 0, 0); /* fallback color */
+     /* background: rgba(0, 0, 0, 0.4); */ 
+     padding: 10px;
+     text-align: center;
+     margin-top: 15px;
+     margin-bottom: 15px;
+     text-shadow: -3px -3px #a77821;
+  }
+
+ .ui-inverted-segment {
+    width: 30px
+ }

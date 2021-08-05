@@ -7,7 +7,12 @@ const Game = ({difficulty, currentUser, first, second, third, updateUser}) => {
     if(difficulty !== ''){
         return(
             <div>
+            <div>
+                <header>RIDDLE ME THIS</header>
+                </div>
+                <div>
         <Riddle difficulty={difficulty} currentUser={currentUser} first={first} second={second} third={third} updateUser={updateUser}/>
+        </div>
         </div>
         )
     }else{
