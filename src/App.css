@@ -2,6 +2,7 @@
     width: 500px;
     margin:auto;
     margin-top:75px;
+    font-size:18px;
 }
 
 #login {
@@ -17,7 +18,7 @@
 }
 
 #start {
-    width: 500px;
+    width:fill;
     margin:auto;
     margin-top:10px;
 }
@@ -27,7 +28,7 @@
 }
 
 #menu-bar {
-    margin-bottom: 0px;
+    margin:0px;
 }
 
 .game_background {

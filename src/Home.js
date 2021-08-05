@@ -54,7 +54,13 @@ const Home = ({users, setUsers, currentUser, setCurrentUser, setTheUser}) => {
   <div class="ui inverted form">
     <div class="one field">
       <div class="field">
-        <input type="text" style={{position: "center"}} name="newUsername" value={newUsername} onChange={(e) => setNewUsername(e.target.value)} placeholder="Player Name"
+        <input type="text" 
+        style={{position: "center"}} 
+        name="newUsername" 
+        value={newUsername} 
+        onChange={(e) => setNewUsername(e.target.value)} 
+        placeholder="Player Name"
+        maxLength="15"
         // placeholder={isActive ? "Username" : "Create Username"} 
         required/>
       </div>

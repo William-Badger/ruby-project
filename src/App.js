@@ -32,8 +32,6 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
       <BrowserRouter>
       <Route exact path="/">
       <Home users={users} setUsers={setUsers} currentUser={currentUser} setCurrentUser={setCurrentUser}/>

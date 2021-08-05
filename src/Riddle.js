@@ -8,21 +8,19 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
     const addScore = () => {
         if(difficulty === 'easy'){
             setPoints(points+1)
+            console.log(points)
         }else if(difficulty === 'medium'){
             setPoints(points+2)
+            console.log(points)
         }else if(difficulty === 'hard'){
             setPoints(points+3)
         }
-        }
+    }
 
     const toFirstA = (e) => {
         e.preventDefault()
         setNumRiddle('firstA')
         if(answer.toLowerCase() === first.answer.toLowerCase()){
-            addScore() 
-        }else if(answer.toLowerCase() === first.answer.toLowerCase()){
-            addScore()
-        }else if(answer.toLowerCase() === first.answer.toLowerCase()){
             addScore()
         }
     }
@@ -36,12 +34,8 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
     const toSecondA = (e) => {
         e.preventDefault()
         setNumRiddle('secondA')
-        if(answer.toLowerCase() === second.answer.toLowerCase() && difficulty === 'easy'){
-            setPoints(points+1) 
-        }else if(answer.toLowerCase() === second.answer.toLowerCase() && difficulty === 'medium'){
-            setPoints(points+2)
-        }else if(answer.toLowerCase() === second.answer.toLowerCase() && difficulty === 'hard'){
-            setPoints(points+3)
+        if(answer.toLowerCase() === second.answer.toLowerCase()){
+            addScore()
         }
     }
 
@@ -54,12 +48,8 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
     const toThirdA = (e) => {
         e.preventDefault()
         setNumRiddle('thirdA')
-        if(answer.toLowerCase() === third.answer.toLowerCase() && difficulty === 'easy'){
-            setPoints(points+1) 
-        }else if(answer.toLowerCase() === third.answer.toLowerCase() && difficulty === 'medium'){
-            setPoints(points+2)
-        }else if(answer.toLowerCase() === third.answer.toLowerCase() && difficulty === 'hard'){
-            setPoints(points+3)
+        if(answer.toLowerCase() === third.answer.toLowerCase()){
+            addScore()
         }
     }
 
@@ -100,7 +90,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                     <div class="ui inverted form">
                         <div class="one field">
                             <div class="field">
-            <input class="answer" type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="What Do You Think?" required/>
+            <input className="answer" type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="What Do You Think?" required/>
                             </div>
             <button type="submit" class="ui submit button">Final Answer</button>
                         </div> 
@@ -231,7 +221,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                     <div class="ui inverted form">
                         <div class="one field">
                             <div class="field">
-            <input type="text" name="answer" placeholder="What Do You Think?" required/>
+            <input className="answer" type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="What Do You Think?" required/>
                             </div>
             <button type="submit" class="ui submit button">Final Answer</button>
                         </div> 
@@ -270,7 +260,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                         <div class="ui inverted form">
                             <div class="one field">
                                 <div class="field">
-                <input type="text" name="answer" placeholder="What Do You Think?" required/>
+                <input className="answer" type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="What Do You Think?" required/>
                                 </div>
                 <button type="submit" class="ui submit button">Final Answer</button>
                             </div>
@@ -310,7 +300,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                         <div class="ui inverted form">
                             <div class="one field">
                                 <div class="field">
-                <input type="text" name="answer" placeholder="What Do You Think?" required/>
+                <input className="answer" type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="What Do You Think?" required/>
                                 </div>
                 <button type="submit" class="ui submit button">Final Answer</button>
                             </div>
@@ -368,7 +358,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                     <div class="ui inverted form">
                         <div class="one field">
                             <div class="field">
-            <input type="text" name="answer" placeholder="What Do You Think?" required/>
+            <input className="answer" type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="What Do You Think?" required/>
                             </div>
             <button type="submit" class="ui submit button">Final Answer</button>
                         </div> 
@@ -407,7 +397,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                         <div class="ui inverted form">
                             <div class="one field">
                                 <div class="field">
-                <input type="text" name="answer" placeholder="What Do You Think?" required/>
+                <input className="answer" type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="What Do You Think?" required/>
                                 </div>
                 <button type="submit" class="ui submit button">Final Answer</button>
                             </div>
@@ -445,7 +435,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                         <div class="ui inverted form">
                             <div class="one field">
                                 <div class="field">
-                <input type="text" name="answer" placeholder="What Do You Think?" required/>
+                <input className="answer" type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="What Do You Think?" required/>
                                 </div>
                 <button type="submit" class="ui submit button">Final Answer</button>
                             </div>
