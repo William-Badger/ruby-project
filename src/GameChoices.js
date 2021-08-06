@@ -46,7 +46,7 @@ const GameChoices = ({setAtHome, currentUser, atHome, updateUser}) => {
   <a class="item"
   onClick={() => handleClick('hard')}
   >
-    Hard
+    Impossible
   </a>
 </div>
 :

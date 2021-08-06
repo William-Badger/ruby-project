@@ -4,6 +4,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
     const [numRiddle, setNumRiddle] = useState('firstQ')
     const [answer, setAnswer] = useState('')
     const [points, setPoints] = useState(0)
+    const [isCorrect, setCorrect] = useState(false);
 
     const addScore = () => {
         if(difficulty === 'easy'){
@@ -21,6 +22,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
         e.preventDefault()
         setNumRiddle('firstA')
         if(answer.toLowerCase() === first.answer.toLowerCase() || answer.toLowerCase() === first.keyword.toLowerCase()){
+            setCorrect(true)
             addScore()
         }
     }
@@ -29,12 +31,14 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
         e.preventDefault()
         setNumRiddle('secondQ')
         setAnswer('')
+        setCorrect(false)
     }
 
     const toSecondA = (e) => {
         e.preventDefault()
         setNumRiddle('secondA')
         if(answer.toLowerCase() === second.answer.toLowerCase() || answer.toLowerCase() === second.keyword.toLowerCase()){
+            setCorrect(true)
             addScore()
         }
     }
@@ -43,6 +47,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
         e.preventDefault()
         setNumRiddle('thirdQ')
         setAnswer('')
+        setCorrect(false)
     }
 
     const toThirdA = (e) => {
@@ -50,12 +55,14 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
         setNumRiddle('thirdA')
         if(answer.toLowerCase() === third.answer.toLowerCase() || answer.toLowerCase() === third.keyword.toLowerCase()){
             addScore()
+            setCorrect(true)
         }
     }
 
     const endGame = (e) => {
         e.preventDefault()
         setNumRiddle('done')
+        setCorrect(false)
 
         fetch(`http://localhost:9292/users/${currentUser.id}`, {
       method: "PATCH",
@@ -85,7 +92,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
             <img id="easy" className="riddle-img" src="https://media.sketchfab.com/models/c7bda986ea5f4b8399289c076465f64f/thumbnails/691843d98d1744a696da94351cf7e887/1024x576.jpeg" alt="img"></img>
             <h2><span>{first.question}</span></h2>
             <div id="answer">
-            <form onSubmit={toFirstA} >
+            <form autocomplete="off" onSubmit={toFirstA} >
                 <div class="ui inverted segment">
                     <div class="ui inverted form">
                         <div class="one field">
@@ -108,7 +115,11 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'firstA' ?
                 <div id="easy-mode" class="image">
                 <img id="easy" src="https://media.sketchfab.com/models/c7bda986ea5f4b8399289c076465f64f/thumbnails/691843d98d1744a696da94351cf7e887/1024x576.jpeg" alt="img"></img>
-                <h2><span>{first.answer}</span></h2>
+                <h2>
+                <span>{isCorrect ? "CORRECT" : "INCORRECT"}</span>
+                <br />
+                <span>{first.answer}</span>
+                </h2>
                 <div id="answer">
                 <form onSubmit={toSecondQ} >
             <button type="submit" class="ui submit button">Next Riddle</button>
@@ -123,7 +134,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                 <img id="easy" src="https://media.sketchfab.com/models/c7bda986ea5f4b8399289c076465f64f/thumbnails/691843d98d1744a696da94351cf7e887/1024x576.jpeg" alt="img"></img>
                 <h2><span>{second.question}</span></h2>
                 <div id="answer">
-                <form onSubmit={toSecondA}>
+                <form autocomplete="off" onSubmit={toSecondA}>
                     <div class="ui inverted segment">
                         <div class="ui inverted form">
                             <div class="one field">
@@ -147,7 +158,11 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'secondA' ?
                 <div id="easy-mode" class="image">
                 <img id="easy" src="https://media.sketchfab.com/models/c7bda986ea5f4b8399289c076465f64f/thumbnails/691843d98d1744a696da94351cf7e887/1024x576.jpeg" alt="img"></img>
-                <h2><span>{second.answer}</span></h2>
+                <h2>
+                <span>{isCorrect ? "CORRECT" : "INCORRECT"}</span>
+                <br />
+                    <span>{second.answer}</span>
+                    </h2>
                 <div id="answer">
                 <form onSubmit={toThirdQ} >
             <button type="submit" class="ui submit button">Next Riddle</button>
@@ -160,9 +175,10 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                 {numRiddle === 'thirdQ' ?
                 <div id="easy-mode" class="image">
                 <img id="easy" src="https://media.sketchfab.com/models/c7bda986ea5f4b8399289c076465f64f/thumbnails/691843d98d1744a696da94351cf7e887/1024x576.jpeg" alt="img"></img>
+                
                 <h2><span>{third.question}</span></h2>
                 <div id="answer">
-                <form onSubmit={toThirdA}>
+                <form autocomplete="off" onSubmit={toThirdA}>
                     <div class="ui inverted segment">
                         <div class="ui inverted form">
                             <div class="one field">
@@ -184,7 +200,9 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                 {numRiddle === 'thirdA' ?
                 <div id="easy-mode" class="image">
                 <img id="easy" src="https://media.sketchfab.com/models/c7bda986ea5f4b8399289c076465f64f/thumbnails/691843d98d1744a696da94351cf7e887/1024x576.jpeg" alt="img"></img>
-                <h2><span>{third.answer}</span></h2>
+                <h2><span>{isCorrect ? "CORRECT" : "INCORRECT"}</span>
+                <br />
+                <span>{third.answer}</span></h2>
                 <div id="answer">
                 <form onSubmit={endGame} >
             <button type="submit" class="ui submit button">Done!</button>
@@ -216,7 +234,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
             <img id="medium" className="riddle-img" src="https://i.pinimg.com/originals/b6/d1/f0/b6d1f08cc854aaa7ec171fcc744da7eb.png" alt="img"></img>
             <h2><span>{first.question}</span></h2>
             <div id="answer">
-            <form onSubmit={toFirstA}>
+            <form autocomplete="off" onSubmit={toFirstA}>
                 <div class="ui inverted segment">
                     <div class="ui inverted form">
                         <div class="one field">
@@ -239,7 +257,11 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'firstA' ?
             <div id="medium-mode" class="image">
             <img id="medium" src="https://i.pinimg.com/originals/b6/d1/f0/b6d1f08cc854aaa7ec171fcc744da7eb.png" alt="img"></img>
-            <h2><span>{first.answer}</span></h2>
+            <h2>
+            <span>{isCorrect ? "CORRECT" : "INCORRECT"}</span>
+            <br />
+                <span>{first.answer}</span>
+                </h2>
             <div id="answer">
             <form onSubmit={toSecondQ} >
             <button type="submit" class="ui submit button">Next Riddle</button>
@@ -255,7 +277,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                 <img id="medium" src="https://i.pinimg.com/originals/b6/d1/f0/b6d1f08cc854aaa7ec171fcc744da7eb.png" alt="img"></img>
                 <h2><span>{second.question}</span></h2>
                 <div id="answer">
-                <form onSubmit={toSecondA}>
+                <form autocomplete="off" onSubmit={toSecondA}>
                     <div class="ui inverted segment">
                         <div class="ui inverted form">
                             <div class="one field">
@@ -279,7 +301,11 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'secondA' ?
             <div id="medium-mode" class="image">
             <img id="medium" src="https://i.pinimg.com/originals/b6/d1/f0/b6d1f08cc854aaa7ec171fcc744da7eb.png" alt="img"></img>
-            <h2><span>{second.answer}</span></h2>
+            <h2>
+            <span>{isCorrect ? "CORRECT" : "INCORRECT"}</span>
+            <br />
+                <span>{second.answer}</span>
+                </h2>
             <div id="answer">
             <form onSubmit={toThirdQ} >
             <button type="submit" class="ui submit button">Next Riddle</button>
@@ -295,7 +321,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                 <img id="medium" src="https://i.pinimg.com/originals/b6/d1/f0/b6d1f08cc854aaa7ec171fcc744da7eb.png" alt="img"></img>
                 <h2><span>{third.question}</span></h2>
                 <div id="answer">
-                <form onSubmit={toThirdA}>
+                <form autocomplete="off" onSubmit={toThirdA}>
                     <div class="ui inverted segment">
                         <div class="ui inverted form">
                             <div class="one field">
@@ -319,7 +345,11 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'thirdA' ?
             <div id="medium-mode" class="image">
             <img id="medium" src="https://i.pinimg.com/originals/b6/d1/f0/b6d1f08cc854aaa7ec171fcc744da7eb.png" alt="img"></img>
-            <h2><span>{third.answer}</span></h2>
+            <h2>
+            <span>{isCorrect ? "CORRECT" : "INCORRECT"}</span>
+            <br />
+                <span>{third.answer}</span>
+                </h2>
             <div id="answer">
             <form onSubmit={endGame} >
             <button type="submit" class="ui submit button">Done!</button>
@@ -353,7 +383,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
             <img id="hard" className="riddle-img" src="https://assetstorev1-prd-cdn.unity3d.com/key-image/936640d6-a60c-41e0-a4a4-5838b470b784.png" alt="img"></img>
             <h2><span>{first.question}</span></h2>
             <div id="answer">
-            <form onSubmit={toFirstA}>
+            <form autocomplete="off" onSubmit={toFirstA}>
                 <div class="ui inverted segment">
                     <div class="ui inverted form">
                         <div class="one field">
@@ -377,7 +407,11 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
            {numRiddle === 'firstA' ?
             <div id="hard-mode" class="image">
             <img id="hard" src="https://assetstorev1-prd-cdn.unity3d.com/key-image/936640d6-a60c-41e0-a4a4-5838b470b784.png" alt="img"></img>
-            <h2><span>{first.answer}</span></h2>
+            <h2>
+            <span>{isCorrect ? "CORRECT" : "INCORRECT"}</span>
+            <br />
+                <span>{first.answer}</span>
+                </h2>
             <div id="answer">
             <form onSubmit={toSecondQ} >
             <button type="submit" class="ui submit button">Next Riddle</button>
@@ -392,7 +426,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                 <img id="hard" src="https://assetstorev1-prd-cdn.unity3d.com/key-image/936640d6-a60c-41e0-a4a4-5838b470b784.png" alt="img"></img>
                 <h2><span>{second.question}</span></h2>
                 <div id="answer">
-                <form onSubmit={toSecondA}>
+                <form autocomplete="off" onSubmit={toSecondA}>
                     <div class="ui inverted segment">
                         <div class="ui inverted form">
                             <div class="one field">
@@ -415,7 +449,11 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'secondA' ?
             <div id="hard-mode" class="image">
             <img id="hard" src="https://assetstorev1-prd-cdn.unity3d.com/key-image/936640d6-a60c-41e0-a4a4-5838b470b784.png" alt="img"></img>
-            <h2><span>{second.answer}</span></h2>
+            <h2>
+            <span>{isCorrect ? "CORRECT" : "INCORRECT"}</span>
+            <br />
+                <span>{second.answer}</span>
+                </h2>
             <div id="answer">
             <form onSubmit={toThirdQ} >
             <button type="submit" class="ui submit button">Next Riddle</button>
@@ -430,7 +468,7 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
                 <img id="hard" src="https://assetstorev1-prd-cdn.unity3d.com/key-image/936640d6-a60c-41e0-a4a4-5838b470b784.png" alt="img"></img>
                 <h2><span>{third.question}</span></h2>
                 <div id="answer">
-                <form onSubmit={toThirdA}>
+                <form autocomplete="off" onSubmit={toThirdA}>
                     <div class="ui inverted segment">
                         <div class="ui inverted form">
                             <div class="one field">
@@ -453,7 +491,11 @@ const Riddle = ({difficulty, currentUser, first, second, third, updateUser}) => 
 {numRiddle === 'thirdA' ?
             <div id="hard-mode" class="image">
             <img id="hard" src="https://assetstorev1-prd-cdn.unity3d.com/key-image/936640d6-a60c-41e0-a4a4-5838b470b784.png" alt="img"></img>
-            <h2><span>{third.answer}</span></h2>
+            <h2>
+            <span>{isCorrect ? "CORRECT" : "INCORRECT"}</span>
+            <br />
+                <span>{third.answer}</span>
+                </h2>
             <div id="answer">
             <form onSubmit={endGame} >
             <button type="submit" class="ui submit button">Done!</button>

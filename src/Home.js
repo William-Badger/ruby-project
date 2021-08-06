@@ -49,7 +49,7 @@ const Home = ({users, setUsers, currentUser, setCurrentUser, setTheUser}) => {
   </a>
 </div> */}
 
-<form onSubmit={startGame}>
+<form autocomplete="off" onSubmit={startGame}>
 <div class="ui inverted segment">
   <div class="ui inverted form">
     <div class="one field">
